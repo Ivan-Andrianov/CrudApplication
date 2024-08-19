@@ -40,21 +40,4 @@ public class LoggerInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
         log.debug("[postHandle][{}]", request);
     }
-
-    /**
-     * Логирует окончание выполнения обработки запроса.
-     *
-     * @param request  текущий http-запрос.
-     * @param response текущий http-ответ.
-     * @param handler  обработчик запроса.
-     * @param ex исключение, выброшенное во время обработки.
-     */
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        if (ex == null) {
-            return;
-        }
-
-        log.error("[afterCompletion][{}][exception: {}]", request, ex);
-    }
 }

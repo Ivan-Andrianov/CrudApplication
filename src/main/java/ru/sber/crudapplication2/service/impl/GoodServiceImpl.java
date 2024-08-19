@@ -29,14 +29,14 @@ public class GoodServiceImpl implements GoodService {
     @Transactional
     public SuccessResponse create(Good good) {
         goodRepository.save(good);
-        return new SuccessResponse("Пользователь успешно создан");
+        return new SuccessResponse("Товар успешно создан");
     }
 
     @Override
     @Transactional
     public SuccessResponse delete(UUID id) {
         goodRepository.deleteById(id);
-        return new SuccessResponse("Пользователь успешно удален");
+        return new SuccessResponse("Товар успешно удален");
     }
 
     @Override
@@ -48,7 +48,10 @@ public class GoodServiceImpl implements GoodService {
     @Override
     @Transactional
     public SuccessResponse update(Good good) {
-        goodRepository.save(good);
-        return new SuccessResponse("Пользователь успешно обновлен");
+        int updates = goodRepository.updateGood(good);
+        if (updates == 0) {
+            throw new EntityNotFoundException();
+        }
+        return new SuccessResponse("Товар успешно обновлен");
     }
 }

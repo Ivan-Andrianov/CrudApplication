@@ -20,7 +20,7 @@ public class ErrorResponse {
     /**
      * Сообщение об ошибке.
      */
-    @JsonProperty("errorMessage")
+    @JsonProperty("message")
     private String message;
 }
 

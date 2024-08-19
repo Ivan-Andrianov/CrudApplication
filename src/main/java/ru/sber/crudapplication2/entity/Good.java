@@ -1,10 +1,7 @@
 package ru.sber.crudapplication2.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.DynamicUpdate;
 import ru.sber.crudapplication2.entity.enums.GoodCategory;
@@ -21,6 +18,7 @@ import java.util.UUID;
 @Entity
 @DynamicUpdate
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "goods")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Good {
@@ -37,7 +35,7 @@ public class Good {
      * Цена товара.
      */
     @Column(name = "price", nullable = false)
-    long price;
+    double price;
 
     /**
      * Имя товара.

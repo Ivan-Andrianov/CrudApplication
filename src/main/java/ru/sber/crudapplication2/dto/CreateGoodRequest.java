@@ -25,20 +25,20 @@ public class CreateGoodRequest {
      */
     @Positive
     @JsonProperty(value = "price", required = true)
-    long price;
+    double price;
 
     /**
      * Имя товара.
      */
-    @NotBlank
+    @NotNull
     @Pattern(regexp = "[a-zA-Z]{2,36}")
-    @JsonProperty(value = "name", required = true)
+    @JsonProperty(value = "name")
     String name;
 
     /**
      * Категория товара.
      */
     @NotNull
-    @JsonProperty(value = "category", required = true)
+    @JsonProperty(value = "category")
     GoodCategory category;
 }

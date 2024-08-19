@@ -12,9 +12,10 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
+                  defaultValue: "gen_random_uuid()"
               - column:
                   name: name
-                  type: varchar(50)
+                  type: varchar(36)
                   constraints:
                     nullable: false
               - column:
@@ -27,3 +28,8 @@ databaseChangeLog:
                   type: text
                   constraints:
                     nullable: true
+              - column:
+                  name: category
+                  type: varchar(30)
+                  constraints:
+                    nullable: false

@@ -20,6 +20,6 @@ public class SuccessResponse {
     /**
      * Сообщение.
      */
-    @JsonProperty("successMessage")
+    @JsonProperty("message")
     private String message;
 }

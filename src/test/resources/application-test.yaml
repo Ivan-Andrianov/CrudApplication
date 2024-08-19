@@ -6,6 +6,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+    open-in-view: false
   datasource:
     url: jdbc:tc:postgresql:14.1:///test?TC_INITSCRIPT=static/testcontainers_init.sql?currentSchema=good_service
     username: test
@@ -13,4 +14,4 @@ spring:
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
 logging:
   level:
-    root: info
+    ru.sber.crudapplication2.controller: debug

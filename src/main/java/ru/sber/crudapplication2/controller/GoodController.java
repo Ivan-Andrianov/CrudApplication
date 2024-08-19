@@ -1,14 +1,9 @@
 package ru.sber.crudapplication2.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import ru.sber.crudapplication2.dto.CreateGoodRequest;
 import ru.sber.crudapplication2.dto.GoodDto;
 import ru.sber.crudapplication2.dto.SuccessResponse;
@@ -34,7 +29,7 @@ public interface GoodController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    SuccessResponse create(CreateGoodRequest request);
+    SuccessResponse create(@Valid @RequestBody CreateGoodRequest request);
 
     /**
      * Удаляет товар.
@@ -64,5 +59,5 @@ public interface GoodController {
      */
     @ResponseStatus(HttpStatus.OK)
     @PatchMapping
-    SuccessResponse update(UpdateGoodRequest request);
+    SuccessResponse update(@Valid @RequestBody UpdateGoodRequest request);
 }
