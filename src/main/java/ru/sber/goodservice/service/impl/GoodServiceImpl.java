@@ -4,7 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.sber.goodservice.GoodRepository;
+import ru.sber.goodservice.repository.GoodRepository;
 import ru.sber.goodservice.dto.SuccessResponse;
 import ru.sber.goodservice.entity.Good;
 import ru.sber.goodservice.service.GoodService;

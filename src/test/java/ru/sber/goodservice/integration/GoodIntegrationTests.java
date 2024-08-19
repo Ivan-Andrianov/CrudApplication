@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.sber.goodservice.GoodRepository;
+import ru.sber.goodservice.repository.GoodRepository;
 import ru.sber.goodservice.entity.Good;
 
 /**
