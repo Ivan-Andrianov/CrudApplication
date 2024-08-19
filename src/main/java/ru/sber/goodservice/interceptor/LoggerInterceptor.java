@@ -1,4 +1,4 @@
-package ru.sber.goodservice.controller;
+package ru.sber.goodservice.interceptor;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
