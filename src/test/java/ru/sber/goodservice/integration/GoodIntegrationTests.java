@@ -11,8 +11,7 @@ import ru.sber.goodservice.repository.GoodRepository;
 import ru.sber.goodservice.entity.Good;
 
 /**
- * Класс для хранения всей информации о поднимаемом контексте, чтобы не поднимать
- * для каждого тестового класса новый Spring-контекст.
+ * Класс для хранения информации о тестовом Spring-контексте.
  *
  * @author Ivan Andrianov.
  */
