@@ -55,7 +55,7 @@ public interface GoodController {
      * @return информацию о товаре.
      */
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     GoodDto read(@PathVariable("id") UUID id);
 
     /**
@@ -65,6 +65,6 @@ public interface GoodController {
      * @return сообщение об успешном выполнении запроса на обновление товара.
      */
     @ResponseStatus(HttpStatus.OK)
-    @PatchMapping
+    @PatchMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     SuccessResponse update(@Valid @RequestBody UpdateGoodRequest request);
 }
