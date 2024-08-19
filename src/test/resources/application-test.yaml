@@ -1,0 +1,16 @@
+spring:
+  liquibase:
+    change-log: db/changelog/changelog-master.yaml
+    default-schema: good_service
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:tc:postgresql:14.1:///test?TC_INITSCRIPT=static/testcontainers_init.sql?currentSchema=good_service
+    username: test
+    password: test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+logging:
+  level:
+    root: info

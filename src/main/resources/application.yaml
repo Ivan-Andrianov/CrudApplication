@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: GoodService
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: ${GOOD_SERVICE_DB_URL:jdbc:postgresql://localhost:5432/crud_application_db?currentSchema=good_service}
+    username: ${GOOD_SERVICE_DB_USERNAME:username}
+    password: ${GOOD_SERVICE_DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: db/changelog/changelog-master.yaml
+    default-schema: good_service
